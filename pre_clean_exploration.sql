@@ -1,5 +1,5 @@
 /*
-Comments
+First we will combine the 12 months of data into a new table consisting of all bike trips in 2022. 
 */
 
 CREATE TABLE `divvy-app-data.bike_tripdata.combined_tripdata` AS
