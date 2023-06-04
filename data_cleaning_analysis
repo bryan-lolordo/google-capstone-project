@@ -1,1 +1,4 @@
-
+combine all the data into one big table - completed
+remove if start and end time is less than 1 minute - completed
+remove if null location type 
+remove unessary columns - 
