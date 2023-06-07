@@ -49,3 +49,9 @@ All ride_id strings are 16 characters long and they are all distinct.
 No cleaning neccesary on this column.
 */
 
+SELECT *
+FROM `divvy-app-data.bike_tripdata.combined_tripdata`
+WHERE TIMESTAMP_DIFF(ended_at, started_at, SECOND) < 60;
+
+-- There are 121,089 rides less than 1 minute long, remove from sample set
+
