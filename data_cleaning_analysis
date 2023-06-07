@@ -92,7 +92,7 @@ WITH
       temp_metrics AS b
     ON a.ride_id = b.ride_id
     WHERE
-      ride_total_seconds > 0
+      ride_total_seconds < 60
       AND
       start_station_name IS NOT NULL
       AND
