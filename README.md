@@ -19,8 +19,6 @@ The company operates in Chicago with around 6000 bicycles at 700 stations.
 
 Maximizing the number of annual members will be key to future growth as it ensures financial sustainability and customer retention. The insights can help devise effective marketing strategies aimed to convert more casual riders into annual members.
 
-## New New
-
 ## Business Task
 
 How do annual members and casual riders use Cyclistic bikes differently ?
