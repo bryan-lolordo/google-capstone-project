@@ -1,7 +1,5 @@
 # Google Capstone Project
 
-1. Hi
-2. Tere
 ## Table of Contents
 
 1. [Introduction](README.md#introduction)
