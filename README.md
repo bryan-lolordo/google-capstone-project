@@ -1,4 +1,4 @@
-# google-capstone-project
+# Google Capstone Project
 
 
 ## Table of Contents
