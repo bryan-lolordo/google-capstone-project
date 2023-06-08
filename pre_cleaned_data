@@ -31,7 +31,7 @@ FROM (
 );
 
 ---------------Analyze all columns from left to right for cleaning----------------------------------------------
-
+/* 
 #1.ride_id:
 - check length combinations for ride_id  
 - and all values are unique as ride_id is a primary key
@@ -54,4 +54,43 @@ FROM `divvy-app-data.bike_tripdata.combined_tripdata`
 WHERE TIMESTAMP_DIFF(ended_at, started_at, SECOND) < 60;
 
 -- There are 121,089 rides less than 1 minute long, remove from sample set
+
+#5. Check NULLS in start and end station name columns
+
+SELECT rideable_type, COUNT(*) AS num_of_rides
+FROM `divvy-app-data.bike_tripdata.combined_tripdata`
+WHERE start_station_name IS NULL AND start_station_id IS NULL OR
+    end_station_name IS NULL AND end_station_id IS NULL 
+GROUP BY rideable_type;
+
+/*
+Classic_bikes/docked_bikes will always start and end their trip locked in a docking station,
+but electric bikes have more versatility. Electric bikes can be locked up using their bike lock
+in the general vicinity of a docking station; thus, trips do not have to start or end at a station.
+As such we will do the following:
+- remove classic/docked bike trips that do not have a start or end station name and have no start/end station id to use to fill in the null.
+- change the null station names to 'On Bike Lock' for electric bikes
+*/
+
+--#6. Check rows were latitude and longitude are null
+
+SELECT *
+FROM `divvy-app-data.bike_tripdata.combined_tripdata`
+WHERE start_lat IS NULL OR
+ start_lng IS NULL OR
+ end_lat IS NULL OR
+ end_lng IS NULL;
+
+-- NOTE: we will remove these rows as all rows should have location points
+
+SELECT rideable_type, COUNT(*) AS num_of_rides
+FROM `divvy-app-data.bike_tripdata.combined_tripdata`
+WHERE start_lat IS NULL OR
+ start_lng IS NULL OR
+ end_lat IS NULL OR
+ end_lng IS NULL
+ GROUP BY rideable_type;
+
+-- NOTE: we will remove these rows as all rows should have location points
+
 
