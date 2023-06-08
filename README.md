@@ -12,7 +12,7 @@
 
 ## Introduction
 
-The project is a part of **Google Data Analytics Certification course capstone**. The scenario involves analysis of the trip data of Cyclistic bike share company.
+This is my  project is my **Google Data Analytics Certification Capstone Project**. The scenario is looking for you to partner with the marketing analyst team at Cyclist, a bike-sharing company in Chicago. The purpose is to understand the company's customers. The marketing director believes the success of the company lies in maximizing annual membership and our task is to provide recommendations and a new marketing strategy on how to convert casual riders into annual members. 
 
 The company has two models for availing service: individual passes which are called "casual" riders and annual subscriptions called "member" riders.
 The company operates in Chicago with around 6000 bicycles at 700 stations.
