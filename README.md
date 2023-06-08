@@ -8,7 +8,7 @@
 4. [Processing and Cleaning](README.md#processing-and-cleaning)
 5. [Analysis and Viz](README.md#analysis-and-viz)
 6. [Conclusion and Recommendations](README.md#conclusions)
-7. [New new](README.md#newnew)
+7. [New new](README.md#newnew) - how to get this to jump to a new segment
 
 ## Introduction
 
