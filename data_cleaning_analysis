@@ -31,21 +31,8 @@ FROM (
 );
 
 WITH
-  temp_2022 AS (
-    SELECT
-      ride_id,
-      rideable_type,
-      started_at,
-      ended_at,
-      start_station_name,
-      CAST(start_station_id AS STRING) AS start_id,
-      end_station_name,
-      CAST(end_station_id AS STRING) AS end_id,
-      start_lat,
-      start_lng,
-      end_lat,
-      end_lng,
-      member_casual
+  final_tripdata AS (
+    SELECT *
     FROM `divvy-app-data.bike_tripdata.combined_tripdata`
     ),
   temp_metrics AS (
@@ -63,7 +50,7 @@ WITH
         WHEN EXTRACT(DAYOFWEEK FROM started_at) = 6 THEN 'Friday'
         WHEN EXTRACT(DAYOFWEEK FROM started_at) = 7 THEN 'Saturday'
         END AS start_day
-      FROM temp_2022
+      FROM final_tripdata
     )
     SELECT        
       a.ride_id,
@@ -73,22 +60,21 @@ WITH
       a.ended_at,
       b.ride_total_seconds,
       a.start_station_name,
-      a.start_id,
+      a.start_station_id,
       a.end_station_name,
-      a.end_id,
+      a.end_station_id,
       ST_DISTANCE(b.start_point, b.end_point) AS ride_distance,
       a.member_casual
     FROM
-      temp_2022 AS a
+      final_tripdata AS a
     JOIN
       temp_metrics AS b
     ON a.ride_id = b.ride_id
     WHERE
-      ride_total_seconds < 60
+      ride_total_seconds > 0
       AND
       start_station_name IS NOT NULL
       AND
       end_station_name IS NOT NULL
-      
   
   
