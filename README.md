@@ -15,12 +15,15 @@
 This is my  project is my **Google Data Analytics Certification Capstone Project**. The scenario is looking for you to partner with the marketing analyst team at Cyclist, a bike-sharing company in Chicago. The purpose is to understand the company's customers. The marketing director believes the success of the company lies in maximizing annual membership and our task is to provide recommendations and a new marketing strategy on how to convert casual riders into annual members. 
 
 ## Business Task
+How do annual members and casual riders use Cyclistic bikes differently ?
+
+**Objective:** To clean, analyze and visualize the data to observe how casual riders use the bike rentals differently from annual member riders.
 
 ## Data
 
-* **Data source** : Public data from Motivate International Inc. (Divvy Bicycle Sharing Service from Chicago) under this [license](https://www.divvybikes.com/data-license-agreement).
-* [Cyclistic’s historical trip data](https://divvy-tripdata.s3.amazonaws.com/index.html) (2013 onwards) available in `.csv` format. 
-* **Our date range** : 
+* **Data source:** Public data from Motivate International Inc. (Divvy Bicycle Sharing Service from Chicago) under this [license](https://www.divvybikes.com/data-license-agreement).
+* [Cyclistic’s historical trip data](https://divvy-tripdata.s3.amazonaws.com/index.html) available in `.csv` format. 
+* **Our date range:** January 2022 to December 2022
 * The dataset has individual ride records consisting of ride start-end date & time, station information, bike type, rider type (casual/member).
 * Data uploaded to Google Cloud Storage(GCS) in order to import the large files.
 
